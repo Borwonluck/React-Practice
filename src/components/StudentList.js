@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./StudentList.css";
 
 function StudetList() {
   const [students, setStudent] = useState([
@@ -14,17 +15,19 @@ function StudetList() {
   }
   return (
     <>
-      <h1>จำนวนนักเรียน : {students.length}</h1>
-      {/* เปลี่ยนค่า State Show */}
-      <button onClick={() => setShow(!show)}>Toggle</button>
       <ul>
+        <div className="header">
+          <h1>จำนวนนักเรียน : {students.length}</h1>
+          {/* เปลี่ยนค่า State Show */}
+          <button onClick={() => setShow(!show)}>Toggle</button>
+        </div>
         {show &&
           students.map((item) => (
             <li key={item.id}>
               <p>
                 {item.id} - {item.name}
               </p>
-              <button onClick={() => deleteStudent(item.id)}>ลบ</button>
+              <button onClick={() => deleteStudent(item.id)} className="delete">ลบ</button>
             </li>
           ))}
       </ul>

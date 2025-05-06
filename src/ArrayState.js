@@ -1,15 +1,20 @@
 // import { useState } from "react";
 import Header from "./components/Header";
 import StudetList from "./components/StudentList";
+import "./App.css";
 
 function ArrayState() {
   //สร้าง State
   return (
     <>
-    <Header/>
-    <main>
-       <StudetList/>
-    </main>
+      <div className="container">
+
+
+        <Header />
+        <main>
+          <StudetList />
+        </main>
+      </div>
     </>
   );
 }
