@@ -10,7 +10,7 @@ function ArrayState() {
       <div className="container">
 
 
-        <Header />
+        <Header title="ข้อมูลนักเรียน"/>
         <main>
           <StudetList />
         </main>

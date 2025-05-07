@@ -1,11 +1,14 @@
 import Logo from "../image/logo.png";
 import "./Header.css";
 
-function Header() {
+
+
+function Header(props) {
+  // const {title} = props
   return (
     <nav>
       <img src={Logo} alt="Logo" className="logo" />
-      <a href="/">หน้าแรก</a>
+      <a href="/">{props.title}</a>
     </nav>
   );
 }

@@ -8,6 +8,10 @@ function StudetList() {
     { id: 3, name: "โลนี่" },
   ]);
   const [show, setShow] = useState(true); //true แสดงเนื้อหา
+  const btnStyle = {
+    background: show ? "purple" : "green",
+  }
+
 
   function deleteStudent(id) {
     //filter ลบเฉพาะ id ที่ตรงกัน id อื่นเหลือไว้
@@ -19,7 +23,7 @@ function StudetList() {
         <div className="header">
           <h1>จำนวนนักเรียน : {students.length}</h1>
           {/* เปลี่ยนค่า State Show */}
-          <button onClick={() => setShow(!show)}>Toggle</button>
+          <button onClick={() => setShow(!show)}style={btnStyle}>{show ? "ซ่อน" : "แสดง"}</button>
         </div>
         {show &&
           students.map((item) => (
