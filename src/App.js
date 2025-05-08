@@ -1,11 +1,31 @@
+// import { useState } from "react";
+import Header from "./components/Header";
+import StudetList from "./components/StudentList";
+import "./App.css";
+import { useState } from "react";
+
 function App() {
-  const name = "วอนรักสยาม";
-  //พื้นที่แสดงผล
+  //สร้าง State
+    const [students, setStudent] = useState([
+      { id: 1, name: "วอน" },
+      { id: 2, name: "เมล" },
+      { id: 3, name: "โลนี่" },
+    ]);
+
+    function deleteStudent(id) {
+      //filter ลบเฉพาะ id ที่ตรงกัน id อื่นเหลือไว้
+      setStudent(students.filter((item) => item.id !== id));
+    }
   return (
     <>
-      <h1>สวัสดีครับ : {name} </h1>
-      <button onClick={()=>alert("สวัสดี")}>CLick</button>
-      <p>wonruksiam studio</p>
+      <div className="container">
+
+
+        <Header title="ข้อมูลนักเรียน"/>
+        <main>
+          <StudetList students={students} deleteStudent={deleteStudent}/>
+        </main>
+      </div>
     </>
   );
 }
