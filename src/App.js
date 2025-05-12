@@ -2,14 +2,13 @@
 import Header from "./components/Header";
 import StudetList from "./components/StudentList";
 import "./App.css";
+import AddForm from "./components/AddForm";
 import { useState } from "react";
 
 function App() {
   //สร้าง State
     const [students, setStudent] = useState([
       { id: 1, name: "วอน" },
-      { id: 2, name: "เมล" },
-      { id: 3, name: "โลนี่" },
     ]);
 
     function deleteStudent(id) {
@@ -23,6 +22,7 @@ function App() {
 
         <Header title="ข้อมูลนักเรียน"/>
         <main>
+          <AddForm/>
           <StudetList students={students} deleteStudent={deleteStudent}/>
         </main>
       </div>
